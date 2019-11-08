@@ -24,6 +24,7 @@ namespace ProyectoTercerSem
         public Series()
         {
             InitializeComponent();
+
         }
     }
 }

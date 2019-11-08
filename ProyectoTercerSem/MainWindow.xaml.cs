@@ -41,5 +41,14 @@ namespace ProyectoTercerSem
 
         }
 
+        private void btnNuevoElemento_Click(object sender, RoutedEventArgs e)
+        {
+            grdElemento.Children.Clear();
+            grdElemento.Children.Add(new SeleccionTipo());
+            btnAscendenteTitulo.Visibility = Visibility.Hidden;
+            btnDescendenteTitulo.Visibility = Visibility.Hidden;
+            btnAscendenteAño.Visibility = Visibility.Hidden;
+            btnDescendenteAño.Visibility = Visibility.Hidden;
+        }
     }
 }
