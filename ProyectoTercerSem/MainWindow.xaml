@@ -1,0 +1,23 @@
+﻿<Window x:Class="ProyectoTercerSem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoTercerSem"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListView x:Name="lstNumeros" HorizontalAlignment="Left" Height="332" VerticalAlignment="Top" Width="250" Margin="25,10,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Titulo}" Header="Nombre" Width="120"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Año}" Header="Promedio" Width="120"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btnAscendenteTitulo" Content="Ascendente por Titulos" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Margin="25,365,0,0"/>
+        <Button x:Name="btnDescendenteTitulo" Content="Descendente por Titulos" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Margin="25,389,0,0"/>
+        <Button x:Name="btnAscendenteAño" Content="Ascendente por Años" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="183,364,0,0"/>
+        <Button x:Name="btnDescendenteAño" Content="Descendente por Años" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="183,389,0,0"/>
+    </Grid>
+</Window>
