@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pelicula.cs" />
     <Compile Include="Serie.cs" />
     <Compile Include="Series.xaml.cs">
       <DependentUpon>Series.xaml</DependentUpon>

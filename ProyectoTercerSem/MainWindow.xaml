@@ -7,17 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListView x:Name="lstNumeros" HorizontalAlignment="Left" Height="332" VerticalAlignment="Top" Width="250" Margin="25,10,0,0">
+        <ListView x:Name="lstCartelera" HorizontalAlignment="Left" Height="332" VerticalAlignment="Top" Width="250" Margin="25,10,0,0">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Titulo}" Header="Nombre" Width="120"></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Año}" Header="Promedio" Width="120"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Titulo}" Header="Titulo" Width="160"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Año}" Header="Año" Width="80"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="btnAscendenteTitulo" Content="Ascendente por Titulos" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Margin="25,365,0,0"/>
-        <Button x:Name="btnDescendenteTitulo" Content="Descendente por Titulos" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Margin="25,389,0,0"/>
-        <Button x:Name="btnAscendenteAño" Content="Ascendente por Años" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="183,364,0,0"/>
-        <Button x:Name="btnDescendenteAño" Content="Descendente por Años" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="183,389,0,0"/>
+        <Button x:Name="btnAscendenteTitulo" Content="Ascendente por Titulos" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Margin="25,350,0,0"/>
+        <Button x:Name="btnDescendenteTitulo" Content="Descendente por Titulos" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Margin="25,374,0,0"/>
+        <Button x:Name="btnAscendenteAño" Content="Ascendente por Años" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="183,349,0,0"/>
+        <Button x:Name="btnDescendenteAño" Content="Descendente por Años" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="183,374,0,0"/>
+        <Button x:Name="btnNuevoElemento" Content="Nuevo elemento" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="292,11,0,0"/>
+        <Grid HorizontalAlignment="Left" Height="301" Margin="292,41,0,0" VerticalAlignment="Top" Width="490"/>
     </Grid>
 </Window>

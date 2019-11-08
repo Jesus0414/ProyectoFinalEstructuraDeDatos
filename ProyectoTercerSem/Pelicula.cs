@@ -6,24 +6,22 @@ using System.Threading.Tasks;
 
 namespace ProyectoTercerSem
 {
-    class Serie
+    class Pelicula
     {
         public string Titulo { get; set; }
         public int Año { get; set; }
         public string Genero { get; set; }
-        public int Temporada { get; set; }
-        public string Productor { get; set; }
-        public string Descripcion { get; set; }
+        public string Director { get; set; }
+        public string Sinopsis { get; set; }
         public int Rating { get; set; }
 
-        public Serie(string titulo, int año, string genero, int temporada, string productor, string descripcion, int rating )
+        public Pelicula(string titulo, int año, string genero, string director, string sinopsis, int rating)
         {
             this.Titulo = titulo;
             this.Año = año;
             this.Genero = genero;
-            this.Temporada = temporada;
-            this.Productor = productor;
-            this.Descripcion = descripcion;
+            this.Director = director;
+            this.Sinopsis = sinopsis;
             this.Rating = rating;
         }
         public override string ToString()
