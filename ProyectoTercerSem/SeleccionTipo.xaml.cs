@@ -23,6 +23,8 @@ namespace ProyectoTercerSem
         public SeleccionTipo()
         {
             InitializeComponent();
+            rbtnPelicula.IsChecked = true;
+            grdSeleccionTipo.Children.Add(new Peliculas());
         }
 
         private void rbtnPelicula_Checked(object sender, RoutedEventArgs e)
