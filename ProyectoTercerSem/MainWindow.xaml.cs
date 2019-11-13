@@ -49,6 +49,30 @@ namespace ProyectoTercerSem
             btnDescendenteTitulo.Visibility = Visibility.Hidden;
             btnAscendenteAño.Visibility = Visibility.Hidden;
             btnDescendenteAño.Visibility = Visibility.Hidden;
+            btnGuardaElementoNuevo.Visibility = Visibility.Visible;
+            btnCancelarElementoNuevo.Visibility = Visibility.Visible;
+        }
+
+        private void btnGuardaElementoNuevo_Click(object sender, RoutedEventArgs e)
+        {
+            grdElemento.Children.Clear();
+            btnAscendenteTitulo.Visibility = Visibility.Visible;
+            btnDescendenteTitulo.Visibility = Visibility.Visible;
+            btnAscendenteAño.Visibility = Visibility.Visible;
+            btnDescendenteAño.Visibility = Visibility.Visible;
+            btnGuardaElementoNuevo.Visibility = Visibility.Hidden;
+            btnCancelarElementoNuevo.Visibility = Visibility.Hidden;
+        }
+
+        private void btnCancelarElementoNuevo_Click(object sender, RoutedEventArgs e)
+        {
+            grdElemento.Children.Clear();
+            btnAscendenteTitulo.Visibility = Visibility.Visible;
+            btnDescendenteTitulo.Visibility = Visibility.Visible;
+            btnAscendenteAño.Visibility = Visibility.Visible;
+            btnDescendenteAño.Visibility = Visibility.Visible;
+            btnGuardaElementoNuevo.Visibility = Visibility.Hidden;
+            btnCancelarElementoNuevo.Visibility = Visibility.Hidden;
         }
     }
 }

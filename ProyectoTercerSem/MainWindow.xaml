@@ -21,6 +21,8 @@
         <Button x:Name="btnDescendenteAño" Content="Descendente por Años" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="150,374,0,0"/>
         <Button x:Name="btnNuevoElemento" Content="Nuevo elemento" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="292,11,0,0" Click="btnNuevoElemento_Click"/>
         <Grid x:Name="grdElemento" HorizontalAlignment="Left" Height="301" Margin="292,41,0,0" VerticalAlignment="Top" Width="490"/>
+        <Button x:Name="btnGuardaElementoNuevo" Visibility="hidden" Content="Guardar nuevo elemento" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" Margin="317,350,0,0" Click="btnGuardaElementoNuevo_Click"/>
+        <Button x:Name="btnCancelarElementoNuevo" Visibility="hidden" Content="Cancelar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Margin="490,350,0,0" Click="btnCancelarElementoNuevo_Click"/>
 
     </Grid>
 </Window>
