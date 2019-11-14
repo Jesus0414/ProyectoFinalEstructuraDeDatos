@@ -59,12 +59,18 @@
     <Compile Include="Peliculas.xaml.cs">
       <DependentUpon>Peliculas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PeliculasEditor.xaml.cs">
+      <DependentUpon>PeliculasEditor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SeleccionTipo.xaml.cs">
       <DependentUpon>SeleccionTipo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Serie.cs" />
     <Compile Include="Series.xaml.cs">
       <DependentUpon>Series.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SeriesEditor.xaml.cs">
+      <DependentUpon>SeriesEditor.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -82,11 +88,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PeliculasEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SeleccionTipo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Series.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SeriesEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

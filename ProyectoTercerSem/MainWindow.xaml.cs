@@ -50,6 +50,7 @@ namespace ProyectoTercerSem
         {
             grdElemento.Children.Clear();
             grdElemento.Children.Add(new SeleccionTipo());
+            btnNuevoElemento.Visibility = Visibility.Hidden;
             btnAscendenteTitulo.Visibility = Visibility.Hidden;
             btnDescendenteTitulo.Visibility = Visibility.Hidden;
             btnAscendenteAño.Visibility = Visibility.Hidden;
@@ -61,6 +62,7 @@ namespace ProyectoTercerSem
         private void btnGuardaElementoNuevo_Click(object sender, RoutedEventArgs e)
         {
             grdElemento.Children.Clear();
+            btnNuevoElemento.Visibility = Visibility.Visible;
             btnAscendenteTitulo.Visibility = Visibility.Visible;
             btnDescendenteTitulo.Visibility = Visibility.Visible;
             btnAscendenteAño.Visibility = Visibility.Visible;
@@ -72,12 +74,25 @@ namespace ProyectoTercerSem
         private void btnCancelarElementoNuevo_Click(object sender, RoutedEventArgs e)
         {
             grdElemento.Children.Clear();
+            btnNuevoElemento.Visibility = Visibility.Visible;
             btnAscendenteTitulo.Visibility = Visibility.Visible;
             btnDescendenteTitulo.Visibility = Visibility.Visible;
             btnAscendenteAño.Visibility = Visibility.Visible;
             btnDescendenteAño.Visibility = Visibility.Visible;
             btnGuardaElementoNuevo.Visibility = Visibility.Hidden;
             btnCancelarElementoNuevo.Visibility = Visibility.Hidden;
+        }
+
+        private void lstCartelera_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lstCartelera.SelectedIndex != -1)
+            {
+                grdElemento.Children.Clear();
+                grdElemento.Children.Add(new SeleccionTipo());
+                /*txtNombreEditar.Text = pelicula[lstCartelera.SelectedIndex].Nombre;
+                txtHexadecimalEditar.Text = pelicula[lstCartelera.SelectedIndex].Hexadecimal;
+                txtRGBEditar.Text = pelicula[lstCartelera.SelectedIndex].RGB;*/
+            }
         }
     }
 }
