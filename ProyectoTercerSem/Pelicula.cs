@@ -6,15 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProyectoTercerSem
 {
-    class Pelicula
+    public class Pelicula : SeriesPeliculas
     {
-        public string Titulo { get; set; }
-        public int Año { get; set; }
-        public string Genero { get; set; }
-        public string Director { get; set; }
-        public string Sinopsis { get; set; }
-        public int Rating { get; set; }
-
         public Pelicula(string titulo, int año, string genero, string director, string sinopsis, int rating)
         {
             this.Titulo = titulo;
@@ -23,6 +16,7 @@ namespace ProyectoTercerSem
             this.Director = director;
             this.Sinopsis = sinopsis;
             this.Rating = rating;
+            Tipo = "Pelicula";
         }
         public override string ToString()
         {

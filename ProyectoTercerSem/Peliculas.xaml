@@ -7,12 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="218" d:DesignWidth="470">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Titulo:" VerticalAlignment="Top" Margin="10,10,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="399" Margin="61,7,0,0"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Año:" VerticalAlignment="Top" Margin="10,43,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="117" Margin="61,43,0,0"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Género:" VerticalAlignment="Top" Margin="206,43,0,0"/>
-        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="252,43,0,0">
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Titulo:" VerticalAlignment="Top" Margin="9,15,0,0"/>
+        <TextBox x:Name="txtTitulo" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="399" Margin="60,12,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Año:" VerticalAlignment="Top" Margin="9,48,0,0"/>
+        <TextBox x:Name="txtAño" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="117" Margin="60,48,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Género:" VerticalAlignment="Top" Margin="205,48,0,0"/>
+        <ComboBox x:Name="cmbGenero" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="251,48,0,0">
             <ComboBoxItem>Acción</ComboBoxItem>
             <ComboBoxItem>Aventura</ComboBoxItem>
             <ComboBoxItem>Comedia</ComboBoxItem>
@@ -24,12 +24,12 @@
             <ComboBoxItem>Wertern</ComboBoxItem>
             <ComboBoxItem>Suspenso</ComboBoxItem>
         </ComboBox>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Director:" VerticalAlignment="Top" Margin="10,80,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="399" Margin="61,80,0,0"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Sinopsis:" VerticalAlignment="Top" Margin="10,109,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="65" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="399" Margin="61,109,0,0"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Rating:" VerticalAlignment="Top" Margin="10,183,0,0"/>
-        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Margin="61,183,0,0">
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Director:" VerticalAlignment="Top" Margin="9,85,0,0"/>
+        <TextBox x:Name="txtDirector" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="399" Margin="60,85,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Sinopsis:" VerticalAlignment="Top" Margin="9,114,0,0"/>
+        <TextBox x:Name="txtSinopsis" HorizontalAlignment="Left" Height="65" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="399" Margin="60,114,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Rating:" VerticalAlignment="Top" Margin="9,188,0,0"/>
+        <ComboBox x:Name="cmbRating" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Margin="60,188,0,0" RenderTransformOrigin="0.764,0.614">
             <ComboBoxItem>1</ComboBoxItem>
             <ComboBoxItem>2</ComboBoxItem>
             <ComboBoxItem>3</ComboBoxItem>
