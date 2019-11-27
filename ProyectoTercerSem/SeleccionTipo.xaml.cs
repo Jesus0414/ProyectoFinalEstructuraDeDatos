@@ -21,27 +21,23 @@ namespace ProyectoTercerSem
     /// </summary>
     public partial class SeleccionTipo : UserControl
     {
-        ObservableCollection<Peliculas> peliculas = new ObservableCollection<Peliculas>();
-
         public SeleccionTipo()
         {
             InitializeComponent();
             rbtnPelicula.IsChecked = true;
-            grdSeleccionTipo.Children.Add(new Peliculas());
+            //grdSeleccionTipo.Children.Add(new Peliculas());
         }
 
         private void rbtnPelicula_Checked(object sender, RoutedEventArgs e)
         {
-            grdSeleccionTipo.Children.Clear();
-            grdSeleccionTipo.Children.Add(new Peliculas());
-
-            peliculas.Add(new Peliculas());
+            //grdSeleccionTipo.Children.Clear();
+            //grdSeleccionTipo.Children.Add(new Peliculas());
         }
 
         private void rbtnSerie_Checked(object sender, RoutedEventArgs e)
         {
-            grdSeleccionTipo.Children.Clear();
-            grdSeleccionTipo.Children.Add(new Series());
+            //grdSeleccionTipo.Children.Clear();
+            //grdSeleccionTipo.Children.Add(new Series());
         }
     }
 }

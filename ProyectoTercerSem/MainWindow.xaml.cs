@@ -22,13 +22,13 @@ namespace ProyectoTercerSem
     public partial class MainWindow : Window
     {
         ObservableCollection<SeriesPeliculas> seriesPeliculas = new ObservableCollection<SeriesPeliculas>();
-        ObservableCollection<Pelicula> pelicula = new ObservableCollection<Pelicula>();
-        ObservableCollection<Serie> serie = new ObservableCollection<Serie>();
+        //ObservableCollection<Pelicula> pelicula = new ObservableCollection<Pelicula>();
+        //ObservableCollection<Serie> serie = new ObservableCollection<Serie>();
         public MainWindow()
         {
             InitializeComponent();
 
-            Serie serie1 = new Serie("Malcolm in the middle", 2000, "Comedia", 7, "Linwood Boomer", 
+            Serie serie1 = new Serie("Malcolm in the middle", 2000, "Comedia", 7, "Linwood Boomer",
                 "La serie trata principalmente sobre un chico llamado Malcolm y su familia disfuncional.", 5);
             Serie serie2 = new Serie("Drake & Josh", 2004, "Comedia", 4, "Dan Schneider",
                 "Drake Parker y Josh Nichols son adolescentes que viven en San Diego, California que se vuelven " +
@@ -51,14 +51,18 @@ namespace ProyectoTercerSem
         private void btnNuevoElemento_Click(object sender, RoutedEventArgs e)
         {
             grdElemento.Children.Clear();
-            grdElemento.Children.Add(new SeleccionTipo());
+            //grdElemento.Children.Add(new SeleccionTipo());
             btnNuevoElemento.Visibility = Visibility.Hidden;
             btnAscendenteTitulo.Visibility = Visibility.Hidden;
             btnDescendenteTitulo.Visibility = Visibility.Hidden;
             btnAscendenteAño.Visibility = Visibility.Hidden;
             btnDescendenteAño.Visibility = Visibility.Hidden;
-            btnGuardaElementoNuevo.Visibility = Visibility.Visible;
+            btnGuardaElementoNuevo.Visibility = Visibility.Hidden;
             btnCancelarElementoNuevo.Visibility = Visibility.Visible;
+            /*lblAgregar.Visibility = Visibility.Visible;
+            lblTipo.Visibility = Visibility.Visible;
+            rbtnPelicula.Visibility = Visibility.Visible;
+            rbtnSerie.Visibility = Visibility.Visible;*/
 
         }
 
@@ -72,6 +76,19 @@ namespace ProyectoTercerSem
             btnDescendenteAño.Visibility = Visibility.Visible;
             btnGuardaElementoNuevo.Visibility = Visibility.Hidden;
             btnCancelarElementoNuevo.Visibility = Visibility.Hidden;
+
+            var elementosVisu = (()(grdElemento.Children[0]));
+
+            if (elementosVisu.rbtnSerie. == true)
+            {
+
+            }
+            if (elementosVisu.rbtnSerie. == true)
+            {
+
+            }
+
+
         }
 
         private void btnCancelarElementoNuevo_Click(object sender, RoutedEventArgs e)
@@ -120,6 +137,28 @@ namespace ProyectoTercerSem
                     elementosVisu.txtSinopsis.Text = parametrosLista.Sinopsis;
                     elementosVisu.cmbRating.Text = parametrosLista.Rating.ToString();
 
+
+                    if (parametrosLista.Rating == 1)
+                    {
+                        elementosVisu.Estrella1.Visibility = Visibility.Visible;
+                    }
+                    if (parametrosLista.Rating == 2)
+                    {
+                        elementosVisu.Estrella2.Visibility = Visibility.Visible;
+                    }
+                    if (parametrosLista.Rating == 3)
+                    {
+                        elementosVisu.Estrella3.Visibility = Visibility.Visible;
+                    }
+                    if (parametrosLista.Rating == 4)
+                    {
+                        elementosVisu.Estrella4.Visibility = Visibility.Visible;
+                    }
+                    if (parametrosLista.Rating == 5)
+                    {
+                        elementosVisu.Estrella5.Visibility = Visibility.Visible;
+                    }
+
                     elementosVisu.txtTitulo.IsEnabled = false;
                     elementosVisu.txtAño.IsEnabled = false;
                     elementosVisu.txtDirector.IsEnabled = false;
@@ -148,6 +187,26 @@ namespace ProyectoTercerSem
                     elementosVisu.cmbGenero.Text = parametrosLista.Genero;
                     elementosVisu.cmbRating.Text = parametrosLista.Rating.ToString();
 
+                    if (parametrosLista.Rating == 1)
+                    {
+                        elementosVisu.Estrella1.Visibility = Visibility.Visible;
+                    }
+                    if (parametrosLista.Rating == 2)
+                    {
+                        elementosVisu.Estrella2.Visibility = Visibility.Visible;
+                    }
+                    if (parametrosLista.Rating == 3)
+                    {
+                        elementosVisu.Estrella3.Visibility = Visibility.Visible;
+                    }
+                    if (parametrosLista.Rating == 4)
+                    {
+                        elementosVisu.Estrella4.Visibility = Visibility.Visible;
+                    }
+                    if (parametrosLista.Rating == 5)
+                    {
+                        elementosVisu.Estrella5.Visibility = Visibility.Visible;
+                    }
                     elementosVisu.txtTitulo.IsEnabled = false;
                     elementosVisu.txtAño.IsEnabled = false;
                     elementosVisu.txtProductor.IsEnabled = false;
@@ -265,8 +324,10 @@ namespace ProyectoTercerSem
 
             elementosVisu.txtTitulo.IsEnabled = true;
             elementosVisu.txtAño.IsEnabled = true;
+            elementosVisu.txtProductor.IsEnabled = true;
             elementosVisu.txtDirector.IsEnabled = true;
             elementosVisu.cmbGenero.IsEnabled = true;
+            elementosVisu.txtDescripcion.IsEnabled = true;
             elementosVisu.txtSinopsis.IsEnabled = true;
             elementosVisu.cmbRating.IsEnabled = true;
             elementosVisu.cmbTemporadas.IsEnabled = true;
@@ -279,20 +340,38 @@ namespace ProyectoTercerSem
 
             parametrosLista.Titulo = elementosVisu.txtTitulo.Text;
             parametrosLista.Año = Convert.ToInt32(elementosVisu.txtAño.Text);
-            parametrosLista.Productor = elementosVisu.txtDirector.Text;
+            parametrosLista.Productor = elementosVisu.txtProductor.Text;
+            parametrosLista.Director = elementosVisu.txtDirector.Text;
             parametrosLista.Genero = elementosVisu.cmbGenero.Text;
-            parametrosLista.Descripcion = elementosVisu.txtSinopsis.Text;
+            parametrosLista.Descripcion = elementosVisu.txtDescripcion.Text;
+            parametrosLista.Sinopsis = elementosVisu.txtSinopsis.Text;
             parametrosLista.Rating = Convert.ToInt32(elementosVisu.cmbRating.Text);
 
             lstCartelera.Items.Refresh();
 
             elementosVisu.txtTitulo.IsEnabled = false;
             elementosVisu.txtAño.IsEnabled = false;
+            elementosVisu.txtProductor.IsEnabled = false;
             elementosVisu.txtDirector.IsEnabled = false;
             elementosVisu.cmbGenero.IsEnabled = false;
+            elementosVisu.txtDescripcion.IsEnabled = false;
             elementosVisu.txtSinopsis.IsEnabled = false;
             elementosVisu.cmbRating.IsEnabled = false;
+            elementosVisu.cmbTemporadas.IsEnabled = false;
         }
 
+        private void rbtnPelicula_Checked(object sender, RoutedEventArgs e)
+        {
+            grdElemento.Children.Clear();
+            grdElemento.Children.Add(new Peliculas());
+            btnGuardaElementoNuevo.Visibility = Visibility.Visible;
+        }
+
+        private void rbtnSerie_Checked(object sender, RoutedEventArgs e)
+        {
+            grdElemento.Children.Clear();
+            grdElemento.Children.Add(new Series());
+            btnGuardaElementoNuevo.Visibility = Visibility.Visible;
+        }
     }
 }

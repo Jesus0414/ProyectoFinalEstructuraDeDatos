@@ -5,10 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProyectoTercerSem"
              mc:Ignorable="d" 
-             d:DesignHeight="218" d:DesignWidth="470">
+             d:DesignHeight="261" d:DesignWidth="470">
     <Grid>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Titulo:" VerticalAlignment="Top" Margin="9,15,0,0"/>
-        <TextBox x:Name="txtTitulo" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="399" Margin="60,12,0,0"/>
+        <TextBox x:Name="txtTitulo"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="399" Margin="60,12,0,0"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Año:" VerticalAlignment="Top" Margin="9,48,0,0"/>
         <TextBox x:Name="txtAño" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="117" Margin="60,48,0,0"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Género:" VerticalAlignment="Top" Margin="205,48,0,0"/>
@@ -30,6 +30,7 @@
         <TextBox x:Name="txtSinopsis" HorizontalAlignment="Left" Height="65" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="399" Margin="60,114,0,0"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Rating:" VerticalAlignment="Top" Margin="9,188,0,0"/>
         <ComboBox x:Name="cmbRating" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Margin="60,188,0,0" RenderTransformOrigin="0.764,0.614">
+            <ComboBoxItem>0</ComboBoxItem>
             <ComboBoxItem>1</ComboBoxItem>
             <ComboBoxItem>2</ComboBoxItem>
             <ComboBoxItem>3</ComboBoxItem>

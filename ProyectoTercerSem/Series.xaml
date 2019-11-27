@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProyectoTercerSem"
              mc:Ignorable="d" 
-            d:DesignHeight="218" d:DesignWidth="470">
+            d:DesignHeight="261" d:DesignWidth="470">
     <Grid>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Titulo:" VerticalAlignment="Top" Margin="10,10,0,0"/>
         <TextBox  x:Name="txtTitulo" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="399" Margin="61,7,0,0"/>
@@ -43,6 +43,7 @@
         <TextBox x:Name="txtDescripcion" HorizontalAlignment="Left" Height="65" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="381" Margin="79,109,0,0"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Rating:" VerticalAlignment="Top" Margin="10,183,0,0"/>
         <ComboBox x:Name="cmbRating" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Margin="52,183,0,0">
+            <ComboBoxItem>0</ComboBoxItem>
             <ComboBoxItem>1</ComboBoxItem>
             <ComboBoxItem>2</ComboBoxItem>
             <ComboBoxItem>3</ComboBoxItem>

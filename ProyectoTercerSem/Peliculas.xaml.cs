@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace ProyectoTercerSem
 {
@@ -20,9 +21,11 @@ namespace ProyectoTercerSem
     /// </summary>
     public partial class Peliculas : UserControl
     {
+        ObservableCollection<Pelicula> peliculaXXX = new ObservableCollection<Pelicula>();
         public Peliculas()
         {
             InitializeComponent();
         }
+
     }
 }

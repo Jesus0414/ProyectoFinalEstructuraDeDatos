@@ -33,6 +33,7 @@
         <TextBox x:Name="txtSinopsis" HorizontalAlignment="Left" Height="65" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="399" Margin="63,185,0,0"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Rating:" VerticalAlignment="Top" Margin="12,259,0,0"/>
         <ComboBox x:Name="cmbRating" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Margin="63,259,0,0" RenderTransformOrigin="0.764,0.614">
+            <ComboBoxItem>0</ComboBoxItem>
             <ComboBoxItem>1</ComboBoxItem>
             <ComboBoxItem>2</ComboBoxItem>
             <ComboBoxItem>3</ComboBoxItem>
@@ -56,5 +57,10 @@
         <TextBox x:Name="txtProductor" Visibility="Hidden" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="117" Margin="266,151,0,0"/>
         <TextBlock x:Name="lblDescripcion" Visibility="Hidden" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Descripción:" VerticalAlignment="Top" Margin="10,185,0,0"/>
         <TextBox x:Name="txtDescripcion" Visibility="Hidden" HorizontalAlignment="Left" Height="65" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="381" Margin="79,185,0,0"/>
+        <Image x:Name="Estrella1" Visibility="Hidden" Margin="136,255,319,7" Source="UnaEstrella.png" Stretch="Fill"/>
+        <Image x:Name="Estrella5" Visibility="Hidden" Margin="136,255,184,7" Source="CincoEstrella.png" Stretch="Fill"/>
+        <Image x:Name="Estrella4" Visibility="Hidden" Margin="136,255,220,7" Source="CuatroEstrella.png" Stretch="Fill"/>
+        <Image x:Name="Estrella3" Visibility="Hidden" Margin="136,255,253,7" Source="TresEstrella.png" Stretch="Fill"/>
+        <Image x:Name="Estrella2" Visibility="Hidden" Margin="136,255,286,7" Source="DosEstrella.png" Stretch="Fill"/>
     </Grid>
 </UserControl>

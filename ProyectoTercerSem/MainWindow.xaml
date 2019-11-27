@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoTercerSem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="800">
     <Grid>
         <ListView x:Name="lstCartelera" HorizontalAlignment="Left" Height="332" VerticalAlignment="Top" Width="250" Margin="25,10,0,0" SelectionChanged="lstCartelera_SelectionChanged">
             <ListView.View>
@@ -21,11 +21,12 @@
         <Button x:Name="btnDescendenteAño" Content="Descendente por Años" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="150,374,0,0" Click="btnDescendenteAño_Click"/>
         <Button x:Name="btnNuevoElemento" Content="Nuevo elemento" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="292,11,0,0" Click="btnNuevoElemento_Click"/>
         <Grid x:Name="grdElemento" HorizontalAlignment="Left" Height="301" Margin="292,41,0,0" VerticalAlignment="Top" Width="490"/>
-        <Button x:Name="btnGuardaElementoNuevo" Visibility="Hidden" Content="Guardar nuevo elemento" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" Margin="482,350,0,0" Click="btnGuardaElementoNuevo_Click"/>
-        <Button x:Name="btnCancelarElementoNuevo" Visibility="Hidden" Content="Cancelar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Margin="655,350,0,0" Click="btnCancelarElementoNuevo_Click"/>
-        <Button x:Name="btnHabilitarEdicion" Visibility="Hidden" Content="Habilitar Edición" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" Margin="317,375,0,0" Click="btnHabilitarEdicion_Click" />
-        <Button x:Name="btnEliminarElemento" Visibility="Hidden" Content="Eliminar Elemento" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Margin="490,350,0,0" Click="btnEliminarElemento_Click"/>
-        <Button x:Name="btnActualizarEdicion" Visibility="Hidden" Content="Actualizar Edición" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" Margin="317,350,0,0" Click="btnActualizarEdicion_Click"/>
+        
+        <Button x:Name="btnGuardaElementoNuevo" Visibility="Hidden" Content="Guardar nuevo elemento" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" Margin="486,409,0,0" Click="btnGuardaElementoNuevo_Click"/>
+        <Button x:Name="btnCancelarElementoNuevo" Visibility="Hidden" Content="Cancelar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Margin="655,409,0,0" Click="btnCancelarElementoNuevo_Click"/>
+        <Button x:Name="btnHabilitarEdicion" Visibility="Hidden" Content="Habilitar Edición" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" Margin="317,439,0,0" Click="btnHabilitarEdicion_Click" />
+        <Button x:Name="btnEliminarElemento" Visibility="Hidden" Content="Eliminar Elemento" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Margin="494,409,0,0" Click="btnEliminarElemento_Click"/>
+        <Button x:Name="btnActualizarEdicion" Visibility="Hidden" Content="Actualizar Edición" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" Margin="317,409,0,0" Click="btnActualizarEdicion_Click"/>
 
     </Grid>
 </Window>
