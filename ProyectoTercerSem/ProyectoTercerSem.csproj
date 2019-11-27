@@ -112,19 +112,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="UnaEstrella.png" />
+    <Resource Include="Estrella5.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="CincoEstrella.png" />
+    <Resource Include="Estrella4.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="CuatroEstrella.png" />
+    <Resource Include="Estrella3.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TresEstrella.png" />
+    <Resource Include="Estrella2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DosEstrella.png" />
+    <Resource Include="Estrella1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Estrella0.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

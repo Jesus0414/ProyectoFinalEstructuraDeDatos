@@ -57,10 +57,11 @@
         <TextBox x:Name="txtProductor" Visibility="Hidden" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="117" Margin="266,151,0,0"/>
         <TextBlock x:Name="lblDescripcion" Visibility="Hidden" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Descripción:" VerticalAlignment="Top" Margin="10,185,0,0"/>
         <TextBox x:Name="txtDescripcion" Visibility="Hidden" HorizontalAlignment="Left" Height="65" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="381" Margin="79,185,0,0"/>
-        <Image x:Name="Estrella1" Visibility="Hidden" Margin="136,255,319,7" Source="UnaEstrella.png" Stretch="Fill"/>
-        <Image x:Name="Estrella5" Visibility="Hidden" Margin="136,255,184,7" Source="CincoEstrella.png" Stretch="Fill"/>
-        <Image x:Name="Estrella4" Visibility="Hidden" Margin="136,255,220,7" Source="CuatroEstrella.png" Stretch="Fill"/>
-        <Image x:Name="Estrella3" Visibility="Hidden" Margin="136,255,253,7" Source="TresEstrella.png" Stretch="Fill"/>
-        <Image x:Name="Estrella2" Visibility="Hidden" Margin="136,255,286,7" Source="DosEstrella.png" Stretch="Fill"/>
+        <Image x:Name="Estrella5" Visibility="Hidden" Margin="136,255,184,7" Source="Estrella5.png" Stretch="Fill"/>
+        <Image x:Name="Estrella4" Visibility="Hidden" Margin="136,255,184,7" Source="Estrella4.png" Stretch="Fill"/>
+        <Image x:Name="Estrella3" Visibility="Hidden" Margin="136,255,184,7" Source="Estrella3.png" Stretch="Fill"/>
+        <Image x:Name="Estrella2" Visibility="Hidden" Margin="136,255,184,7" Source="Estrella2.png" Stretch="Fill"/>
+        <Image x:Name="Estrella1" Visibility="Hidden" Margin="136,255,184,7" Source="Estrella1.png" Stretch="Fill"/>
+        <Image x:Name="Estrella0" Visibility="Hidden" Margin="136,255,184,7" Source="Estrella0.png" Stretch="Fill"/>
     </Grid>
 </UserControl>

@@ -22,8 +22,6 @@ namespace ProyectoTercerSem
     public partial class MainWindow : Window
     {
         ObservableCollection<SeriesPeliculas> seriesPeliculas = new ObservableCollection<SeriesPeliculas>();
-        //ObservableCollection<Pelicula> pelicula = new ObservableCollection<Pelicula>();
-        //ObservableCollection<Serie> serie = new ObservableCollection<Serie>();
         public MainWindow()
         {
             InitializeComponent();
@@ -59,10 +57,6 @@ namespace ProyectoTercerSem
             btnDescendenteAño.Visibility = Visibility.Hidden;
             btnGuardaElementoNuevo.Visibility = Visibility.Visible;
             btnCancelarElementoNuevo.Visibility = Visibility.Visible;
-            /*lblAgregar.Visibility = Visibility.Visible;
-            lblTipo.Visibility = Visibility.Visible;
-            rbtnPelicula.Visibility = Visibility.Visible;
-            rbtnSerie.Visibility = Visibility.Visible;*/
 
         }
 
@@ -126,21 +120,22 @@ namespace ProyectoTercerSem
                 btnCancelarElementoNuevo.Visibility = Visibility.Visible;
 
 
-
                 var elementosVisu = ((Visualizar)(grdElemento.Children[0]));
                 var parametrosLista = seriesPeliculas[lstCartelera.SelectedIndex];
-                if (parametrosLista.Tipo == "Pelicula") 
+                if (parametrosLista.Tipo == "Pelicula")
                 {
                     elementosVisu.lblTipo.Text = parametrosLista.Tipo;
                     elementosVisu.txtTitulo.Text = parametrosLista.Titulo;
                     elementosVisu.txtAño.Text = parametrosLista.Año.ToString();
                     elementosVisu.txtDirector.Text = parametrosLista.Director;
                     elementosVisu.cmbGenero.Text = parametrosLista.Genero;
-                    //Convert.ToInt32()
                     elementosVisu.txtSinopsis.Text = parametrosLista.Sinopsis;
                     elementosVisu.cmbRating.Text = parametrosLista.Rating.ToString();
 
-
+                    if (parametrosLista.Rating == 0) 
+                    {
+                        elementosVisu.Estrella0.Visibility = Visibility.Visible;
+                    } 
                     if (parametrosLista.Rating == 1)
                     {
                         elementosVisu.Estrella1.Visibility = Visibility.Visible;
@@ -224,40 +219,40 @@ namespace ProyectoTercerSem
 
         private void btnAscendenteAño_Click(object sender, RoutedEventArgs e)
         {
-            int gap, i;
-            gap = seriesPeliculas.Count / 2;
-            while (gap > 0)
+            bool cambio = false;
+            do
             {
-                for (i = 0; i < seriesPeliculas.Count; i++)
+                cambio = false;
+                for (int i = 0; i < seriesPeliculas.Count - 1; i++)
                 {
-                    if (gap + i < seriesPeliculas.Count && seriesPeliculas[i].Año > seriesPeliculas[gap + i].Año)
+                    if (seriesPeliculas[i].Año > seriesPeliculas[i + 1].Año)
                     {
                         var temp = seriesPeliculas[i];
-                        seriesPeliculas[i] = seriesPeliculas[gap + i];
-                        seriesPeliculas[gap + i] = temp;
+                        seriesPeliculas[i] = seriesPeliculas[i + 1];
+                        seriesPeliculas[i + 1] = temp;
+                        cambio = true;
                     }
                 }
-                gap--;
-            }
+            } while (cambio);
         }
 
         private void btnDescendenteAño_Click(object sender, RoutedEventArgs e)
         {
-            int gap, i;
-            gap = seriesPeliculas.Count / 2;
-            while (gap > 0)
+            bool cambio = false;
+            do
             {
-                for (i = 0; i < seriesPeliculas.Count; i++)
+                cambio = false;
+                for (int i = 0; i < seriesPeliculas.Count - 1; i++)
                 {
-                    if (gap + i < seriesPeliculas.Count && seriesPeliculas[i].Año < seriesPeliculas[gap + i].Año)
+                    if (seriesPeliculas[i].Año < seriesPeliculas[i + 1].Año)
                     {
                         var temp = seriesPeliculas[i];
-                        seriesPeliculas[i] = seriesPeliculas[gap + i];
-                        seriesPeliculas[gap + i] = temp;
+                        seriesPeliculas[i] = seriesPeliculas[i + 1];
+                        seriesPeliculas[i + 1] = temp;
+                        cambio = true;
                     }
                 }
-                gap--;
-            }
+            } while (cambio);
         }
 
         private void btnAscendenteTitulo_Click(object sender, RoutedEventArgs e)
@@ -361,6 +356,19 @@ namespace ProyectoTercerSem
             elementosVisu.txtSinopsis.IsEnabled = false;
             elementosVisu.cmbRating.IsEnabled = false;
             elementosVisu.cmbTemporadas.IsEnabled = false;
+
+            grdElemento.Children.Clear();
+
+            btnNuevoElemento.Visibility = Visibility.Visible;
+            btnAscendenteTitulo.Visibility = Visibility.Visible;
+            btnDescendenteTitulo.Visibility = Visibility.Visible;
+            btnAscendenteAño.Visibility = Visibility.Visible;
+            btnDescendenteAño.Visibility = Visibility.Visible;
+            btnGuardaElementoNuevo.Visibility = Visibility.Hidden;
+            btnCancelarElementoNuevo.Visibility = Visibility.Hidden;
+            btnHabilitarEdicion.Visibility = Visibility.Hidden;
+            btnEliminarElemento.Visibility = Visibility.Hidden;
+            btnActualizarEdicion.Visibility = Visibility.Hidden;
         }
 
         private void rbtnPelicula_Checked(object sender, RoutedEventArgs e)
