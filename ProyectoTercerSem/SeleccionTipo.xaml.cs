@@ -30,14 +30,30 @@ namespace ProyectoTercerSem
 
         private void rbtnPelicula_Checked(object sender, RoutedEventArgs e)
         {
-            //grdSeleccionTipo.Children.Clear();
-            //grdSeleccionTipo.Children.Add(new Peliculas());
+            txtDirector.Visibility = Visibility.Visible;
+            lblDirector.Visibility = Visibility.Visible;
+            txtProductor.Visibility = Visibility.Hidden;
+            lblProductor.Visibility = Visibility.Hidden;
+            txtSinopsis.Visibility = Visibility.Visible;
+            lblSinopsis.Visibility = Visibility.Visible;
+            txtDescripcion.Visibility = Visibility.Hidden;
+            lblDescripcion.Visibility = Visibility.Hidden;
+            cmbTemporadas.Visibility = Visibility.Hidden;
+            lblTemporadas.Visibility = Visibility.Hidden;
         }
 
         private void rbtnSerie_Checked(object sender, RoutedEventArgs e)
         {
-            //grdSeleccionTipo.Children.Clear();
-            //grdSeleccionTipo.Children.Add(new Series());
+            txtDirector.Visibility = Visibility.Hidden;
+            lblDirector.Visibility = Visibility.Hidden;
+            txtProductor.Visibility = Visibility.Visible;
+            lblProductor.Visibility = Visibility.Visible;
+            txtSinopsis.Visibility = Visibility.Hidden;
+            lblSinopsis.Visibility = Visibility.Hidden;
+            txtDescripcion.Visibility = Visibility.Visible;
+            lblDescripcion.Visibility = Visibility.Visible;
+            cmbTemporadas.Visibility = Visibility.Visible;
+            lblTemporadas.Visibility = Visibility.Visible;
         }
     }
 }

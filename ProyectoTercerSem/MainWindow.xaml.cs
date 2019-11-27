@@ -51,13 +51,13 @@ namespace ProyectoTercerSem
         private void btnNuevoElemento_Click(object sender, RoutedEventArgs e)
         {
             grdElemento.Children.Clear();
-            //grdElemento.Children.Add(new SeleccionTipo());
+            grdElemento.Children.Add(new SeleccionTipo());
             btnNuevoElemento.Visibility = Visibility.Hidden;
             btnAscendenteTitulo.Visibility = Visibility.Hidden;
             btnDescendenteTitulo.Visibility = Visibility.Hidden;
             btnAscendenteAño.Visibility = Visibility.Hidden;
             btnDescendenteAño.Visibility = Visibility.Hidden;
-            btnGuardaElementoNuevo.Visibility = Visibility.Hidden;
+            btnGuardaElementoNuevo.Visibility = Visibility.Visible;
             btnCancelarElementoNuevo.Visibility = Visibility.Visible;
             /*lblAgregar.Visibility = Visibility.Visible;
             lblTipo.Visibility = Visibility.Visible;
@@ -68,6 +68,22 @@ namespace ProyectoTercerSem
 
         private void btnGuardaElementoNuevo_Click(object sender, RoutedEventArgs e)
         {
+           
+            var elementos = ((SeleccionTipo)(grdElemento.Children[0]));
+
+            if (elementos.rbtnPelicula.IsChecked == true)
+            {
+                seriesPeliculas.Add(new Pelicula(elementos.txtTitulo.Text, Convert.ToInt32(elementos.txtAño.Text),
+                    elementos.cmbGenero.Text, elementos.txtDirector.Text, elementos.txtSinopsis.Text,
+                    Convert.ToInt32(elementos.cmbRating.Text)));
+            }
+            if (elementos.rbtnSerie.IsChecked == true)
+            {
+                seriesPeliculas.Add(new Serie(elementos.txtTitulo.Text, Convert.ToInt32(elementos.txtAño.Text),
+                    elementos.cmbGenero.Text, Convert.ToInt32(elementos.cmbTemporadas.Text), elementos.txtProductor.Text, 
+                    elementos.txtDescripcion.Text, Convert.ToInt32(elementos.cmbRating.Text)));
+            }
+
             grdElemento.Children.Clear();
             btnNuevoElemento.Visibility = Visibility.Visible;
             btnAscendenteTitulo.Visibility = Visibility.Visible;
@@ -76,19 +92,6 @@ namespace ProyectoTercerSem
             btnDescendenteAño.Visibility = Visibility.Visible;
             btnGuardaElementoNuevo.Visibility = Visibility.Hidden;
             btnCancelarElementoNuevo.Visibility = Visibility.Hidden;
-
-            var elementosVisu = (()(grdElemento.Children[0]));
-
-            if (elementosVisu.rbtnSerie. == true)
-            {
-
-            }
-            if (elementosVisu.rbtnSerie. == true)
-            {
-
-            }
-
-
         }
 
         private void btnCancelarElementoNuevo_Click(object sender, RoutedEventArgs e)
@@ -363,14 +366,12 @@ namespace ProyectoTercerSem
         private void rbtnPelicula_Checked(object sender, RoutedEventArgs e)
         {
             grdElemento.Children.Clear();
-            grdElemento.Children.Add(new Peliculas());
             btnGuardaElementoNuevo.Visibility = Visibility.Visible;
         }
 
         private void rbtnSerie_Checked(object sender, RoutedEventArgs e)
         {
             grdElemento.Children.Clear();
-            grdElemento.Children.Add(new Series());
             btnGuardaElementoNuevo.Visibility = Visibility.Visible;
         }
     }
