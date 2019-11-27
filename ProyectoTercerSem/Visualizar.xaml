@@ -7,7 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="301" d:DesignWidth="490">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Visualizar elemento" VerticalAlignment="Top" Margin="10,10,0,0" Height="39" Width="213" FontSize="24"/>
+        <TextBlock x:Name="lblVisuElemt" Visibility="Visible" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Visualizar elemento" VerticalAlignment="Top" Margin="10,10,0,0" Height="39" Width="213" FontSize="24"/>
+        <TextBlock x:Name="lblEditElemt" Visibility="Hidden" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Editar elemento" VerticalAlignment="Top" Margin="10,10,0,0" Height="39" Width="213" FontSize="24"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Tipo:" VerticalAlignment="Top" Margin="10,54,0,0" FontSize="14"/>
         <TextBlock x:Name="lblTipo" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Pelicula" VerticalAlignment="Top" Margin="49,54,0,0" FontSize="14"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Titulo:" VerticalAlignment="Top" Margin="12,86,0,0"/>

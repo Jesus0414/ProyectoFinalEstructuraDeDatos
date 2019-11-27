@@ -67,25 +67,47 @@ namespace ProyectoTercerSem
 
             if (elementos.rbtnPelicula.IsChecked == true)
             {
-                seriesPeliculas.Add(new Pelicula(elementos.txtTitulo.Text, Convert.ToInt32(elementos.txtAño.Text),
+                if (elementos.txtTitulo.Text != "" && elementos.txtAño.Text != "" &&
+                    elementos.txtDirector.Text != "" && elementos.cmbGenero.SelectedIndex != -1 &&
+                    elementos.txtSinopsis.Text != "" && elementos.cmbRating.SelectedIndex != -1)
+                {
+                    seriesPeliculas.Add(new Pelicula(elementos.txtTitulo.Text, Convert.ToInt32(elementos.txtAño.Text),
                     elementos.cmbGenero.Text, elementos.txtDirector.Text, elementos.txtSinopsis.Text,
                     Convert.ToInt32(elementos.cmbRating.Text)));
+
+                    grdElemento.Children.Clear();
+                    btnNuevoElemento.Visibility = Visibility.Visible;
+                    btnAscendenteTitulo.Visibility = Visibility.Visible;
+                    btnDescendenteTitulo.Visibility = Visibility.Visible;
+                    btnAscendenteAño.Visibility = Visibility.Visible;
+                    btnDescendenteAño.Visibility = Visibility.Visible;
+                    btnGuardaElementoNuevo.Visibility = Visibility.Hidden;
+                    btnCancelarElementoNuevo.Visibility = Visibility.Hidden;
+                }
+                else MessageBox.Show("Es necesario que se llenen todos los datos obligatorios.");
             }
             if (elementos.rbtnSerie.IsChecked == true)
             {
-                seriesPeliculas.Add(new Serie(elementos.txtTitulo.Text, Convert.ToInt32(elementos.txtAño.Text),
-                    elementos.cmbGenero.Text, Convert.ToInt32(elementos.cmbTemporadas.Text), elementos.txtProductor.Text, 
+                if (elementos.txtTitulo.Text != "" && elementos.txtAño.Text != "" &&
+                    elementos.txtProductor.Text != "" && elementos.cmbGenero.SelectedIndex != -1 &&
+                    elementos.txtDescripcion.Text != "" && elementos.cmbRating.SelectedIndex != -1 &&
+                    elementos.cmbTemporadas.SelectedIndex != -1)
+                {
+                    seriesPeliculas.Add(new Serie(elementos.txtTitulo.Text, Convert.ToInt32(elementos.txtAño.Text),
+                    elementos.cmbGenero.Text, Convert.ToInt32(elementos.cmbTemporadas.Text), elementos.txtProductor.Text,
                     elementos.txtDescripcion.Text, Convert.ToInt32(elementos.cmbRating.Text)));
-            }
 
-            grdElemento.Children.Clear();
-            btnNuevoElemento.Visibility = Visibility.Visible;
-            btnAscendenteTitulo.Visibility = Visibility.Visible;
-            btnDescendenteTitulo.Visibility = Visibility.Visible;
-            btnAscendenteAño.Visibility = Visibility.Visible;
-            btnDescendenteAño.Visibility = Visibility.Visible;
-            btnGuardaElementoNuevo.Visibility = Visibility.Hidden;
-            btnCancelarElementoNuevo.Visibility = Visibility.Hidden;
+                    grdElemento.Children.Clear();
+                    btnNuevoElemento.Visibility = Visibility.Visible;
+                    btnAscendenteTitulo.Visibility = Visibility.Visible;
+                    btnDescendenteTitulo.Visibility = Visibility.Visible;
+                    btnAscendenteAño.Visibility = Visibility.Visible;
+                    btnDescendenteAño.Visibility = Visibility.Visible;
+                    btnGuardaElementoNuevo.Visibility = Visibility.Hidden;
+                    btnCancelarElementoNuevo.Visibility = Visibility.Hidden;
+                }
+                else MessageBox.Show("Es necesario que se llenen todos los datos obligatorios.");
+            }
         }
 
         private void btnCancelarElementoNuevo_Click(object sender, RoutedEventArgs e)
@@ -122,6 +144,10 @@ namespace ProyectoTercerSem
 
                 var elementosVisu = ((Visualizar)(grdElemento.Children[0]));
                 var parametrosLista = seriesPeliculas[lstCartelera.SelectedIndex];
+
+                elementosVisu.lblVisuElemt.Visibility = Visibility.Visible;
+                elementosVisu.lblEditElemt.Visibility = Visibility.Hidden;
+
                 if (parametrosLista.Tipo == "Pelicula")
                 {
                     elementosVisu.lblTipo.Text = parametrosLista.Tipo;
@@ -185,6 +211,10 @@ namespace ProyectoTercerSem
                     elementosVisu.cmbGenero.Text = parametrosLista.Genero;
                     elementosVisu.cmbRating.Text = parametrosLista.Rating.ToString();
 
+                    if (parametrosLista.Rating == 0)
+                    {
+                        elementosVisu.Estrella0.Visibility = Visibility.Visible;
+                    }
                     if (parametrosLista.Rating == 1)
                     {
                         elementosVisu.Estrella1.Visibility = Visibility.Visible;
@@ -317,7 +347,7 @@ namespace ProyectoTercerSem
         {
             btnHabilitarEdicion.Visibility = Visibility.Hidden;
             btnActualizarEdicion.Visibility = Visibility.Visible;
-
+            
             var elementosVisu = ((Visualizar)(grdElemento.Children[0]));
 
             elementosVisu.txtTitulo.IsEnabled = true;
@@ -329,6 +359,9 @@ namespace ProyectoTercerSem
             elementosVisu.txtSinopsis.IsEnabled = true;
             elementosVisu.cmbRating.IsEnabled = true;
             elementosVisu.cmbTemporadas.IsEnabled = true;
+
+            elementosVisu.lblVisuElemt.Visibility = Visibility.Hidden;
+            elementosVisu.lblEditElemt.Visibility = Visibility.Visible;
         }
 
         private void btnActualizarEdicion_Click(object sender, RoutedEventArgs e)
@@ -336,39 +369,86 @@ namespace ProyectoTercerSem
             var elementosVisu = ((Visualizar)(grdElemento.Children[0]));
             var parametrosLista = seriesPeliculas[lstCartelera.SelectedIndex];
 
-            parametrosLista.Titulo = elementosVisu.txtTitulo.Text;
-            parametrosLista.Año = Convert.ToInt32(elementosVisu.txtAño.Text);
-            parametrosLista.Productor = elementosVisu.txtProductor.Text;
-            parametrosLista.Director = elementosVisu.txtDirector.Text;
-            parametrosLista.Genero = elementosVisu.cmbGenero.Text;
-            parametrosLista.Descripcion = elementosVisu.txtDescripcion.Text;
-            parametrosLista.Sinopsis = elementosVisu.txtSinopsis.Text;
-            parametrosLista.Rating = Convert.ToInt32(elementosVisu.cmbRating.Text);
+            if (parametrosLista.Tipo == "Pelicula")
+            {
+                if (elementosVisu.txtTitulo.Text != "" && elementosVisu.txtAño.Text != "" &&
+                    elementosVisu.txtDirector.Text != "" && elementosVisu.cmbGenero.Text != "" &&
+                    elementosVisu.txtSinopsis.Text != "")
+                {
+                    parametrosLista.Titulo = elementosVisu.txtTitulo.Text;
+                    parametrosLista.Año = Convert.ToInt32(elementosVisu.txtAño.Text);
+                    parametrosLista.Director = elementosVisu.txtDirector.Text;
+                    parametrosLista.Genero = elementosVisu.cmbGenero.Text;
+                    parametrosLista.Sinopsis = elementosVisu.txtSinopsis.Text;
+                    parametrosLista.Rating = Convert.ToInt32(elementosVisu.cmbRating.Text);
 
-            lstCartelera.Items.Refresh();
+                
+                    lstCartelera.Items.Refresh();
 
-            elementosVisu.txtTitulo.IsEnabled = false;
-            elementosVisu.txtAño.IsEnabled = false;
-            elementosVisu.txtProductor.IsEnabled = false;
-            elementosVisu.txtDirector.IsEnabled = false;
-            elementosVisu.cmbGenero.IsEnabled = false;
-            elementosVisu.txtDescripcion.IsEnabled = false;
-            elementosVisu.txtSinopsis.IsEnabled = false;
-            elementosVisu.cmbRating.IsEnabled = false;
-            elementosVisu.cmbTemporadas.IsEnabled = false;
+                    elementosVisu.txtTitulo.IsEnabled = false;
+                    elementosVisu.txtAño.IsEnabled = false;
+                    elementosVisu.txtDirector.IsEnabled = false;
+                    elementosVisu.cmbGenero.IsEnabled = false;
+                    elementosVisu.txtSinopsis.IsEnabled = false;
+                    elementosVisu.cmbRating.IsEnabled = false;
 
-            grdElemento.Children.Clear();
+                    grdElemento.Children.Clear();
 
-            btnNuevoElemento.Visibility = Visibility.Visible;
-            btnAscendenteTitulo.Visibility = Visibility.Visible;
-            btnDescendenteTitulo.Visibility = Visibility.Visible;
-            btnAscendenteAño.Visibility = Visibility.Visible;
-            btnDescendenteAño.Visibility = Visibility.Visible;
-            btnGuardaElementoNuevo.Visibility = Visibility.Hidden;
-            btnCancelarElementoNuevo.Visibility = Visibility.Hidden;
-            btnHabilitarEdicion.Visibility = Visibility.Hidden;
-            btnEliminarElemento.Visibility = Visibility.Hidden;
-            btnActualizarEdicion.Visibility = Visibility.Hidden;
+                    btnNuevoElemento.Visibility = Visibility.Visible;
+                    btnAscendenteTitulo.Visibility = Visibility.Visible;
+                    btnDescendenteTitulo.Visibility = Visibility.Visible;
+                    btnAscendenteAño.Visibility = Visibility.Visible;
+                    btnDescendenteAño.Visibility = Visibility.Visible;
+                    btnGuardaElementoNuevo.Visibility = Visibility.Hidden;
+                    btnCancelarElementoNuevo.Visibility = Visibility.Hidden;
+                    btnHabilitarEdicion.Visibility = Visibility.Hidden;
+                    btnEliminarElemento.Visibility = Visibility.Hidden;
+                    btnActualizarEdicion.Visibility = Visibility.Hidden;
+                }
+                else MessageBox.Show("Es necesario que se llenen todos los datos obligatorios.");
+            }
+
+            if (parametrosLista.Tipo == "Serie")
+            {
+                if (elementosVisu.txtTitulo.Text != "" && elementosVisu.txtAño.Text != "" &&
+                    elementosVisu.txtProductor.Text != "" && elementosVisu.cmbGenero.Text != "" &&
+                    elementosVisu.txtDescripcion.Text != "" && elementosVisu.cmbRating.Text != "" &&
+                    elementosVisu.cmbTemporadas.Text != "")
+                {
+                    parametrosLista.Titulo = elementosVisu.txtTitulo.Text;
+                    parametrosLista.Año = Convert.ToInt32(elementosVisu.txtAño.Text);
+                    parametrosLista.Productor = elementosVisu.txtProductor.Text;
+                    parametrosLista.Genero = elementosVisu.cmbGenero.Text;
+                    parametrosLista.Descripcion = elementosVisu.txtDescripcion.Text;
+                    parametrosLista.Rating = Convert.ToInt32(elementosVisu.cmbRating.Text);
+                    parametrosLista.Temporada = Convert.ToInt32(elementosVisu.cmbTemporadas.Text);
+
+                    lstCartelera.Items.Refresh();
+
+                    elementosVisu.txtTitulo.IsEnabled = false;
+                    elementosVisu.txtAño.IsEnabled = false;
+                    elementosVisu.txtProductor.IsEnabled = false;
+                    elementosVisu.cmbGenero.IsEnabled = false;
+                    elementosVisu.txtDescripcion.IsEnabled = false;
+                    elementosVisu.cmbRating.IsEnabled = false;
+                    elementosVisu.cmbTemporadas.IsEnabled = false;
+
+                    grdElemento.Children.Clear();
+
+                    btnNuevoElemento.Visibility = Visibility.Visible;
+                    btnAscendenteTitulo.Visibility = Visibility.Visible;
+                    btnDescendenteTitulo.Visibility = Visibility.Visible;
+                    btnAscendenteAño.Visibility = Visibility.Visible;
+                    btnDescendenteAño.Visibility = Visibility.Visible;
+                    btnGuardaElementoNuevo.Visibility = Visibility.Hidden;
+                    btnCancelarElementoNuevo.Visibility = Visibility.Hidden;
+                    btnHabilitarEdicion.Visibility = Visibility.Hidden;
+                    btnEliminarElemento.Visibility = Visibility.Hidden;
+                    btnActualizarEdicion.Visibility = Visibility.Hidden;
+                }
+                else MessageBox.Show("Es necesario que se llenen todos los datos obligatorios.");
+            }
+
         }
 
         private void rbtnPelicula_Checked(object sender, RoutedEventArgs e)
